@@ -1,0 +1,17 @@
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let episode of episodes" hideToggle>
+
+    <mat-expansion-panel-header title="{{episode.summary}}">
+      <mat-panel-title>
+        {{episode.number}}
+      </mat-panel-title>
+      <mat-panel-title>
+        {{episode.name}}
+      </mat-panel-title>
+      <mat-panel-title>
+        {{episode.airdate}}
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+  </mat-expansion-panel>
+</mat-accordion>
+

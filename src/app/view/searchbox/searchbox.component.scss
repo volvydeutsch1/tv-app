@@ -1,0 +1,22 @@
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(to bottom right, red, yellow);
+}
+.search {
+  color: #333;
+  border: none;
+  border-radius: 100px;
+  background-color: #fafafa;
+  padding: 5px 16px;
+  width: 180px;
+  max-width: 240px;
+  height: 50%;
+  -webkit-appearance: none;
+}
+.button {
+
+ }
