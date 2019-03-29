@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { SeasonsComponent } from './view/seasons/seasons.component';
 import { EpisodesComponent } from './view/episodes/episodes.component';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { EpisodesComponent } from './view/episodes/episodes.component';
     MatIconModule,
     FormsModule,
     HttpClientModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

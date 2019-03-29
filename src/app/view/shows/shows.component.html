@@ -1,6 +1,6 @@
 
 <mat-accordion>
-  <mat-expansion-panel *ngFor="let show of shows">
+  <mat-expansion-panel *ngFor="let show of shows" style="background-color: red">
     <mat-expansion-panel-header>
       <mat-panel-title>
         {{show.name}}
@@ -12,9 +12,11 @@
         Status: {{show.status}}
       </mat-panel-title>
     </mat-expansion-panel-header>
-    <img *ngIf="show.image" src="{{show.image}}" alt="test">
-    <span [innerHTML]="show.summary"></span>
-    <button mat-button color="warn" routerLink="/seasons/{{show.id}}">Details</button>
-  </mat-expansion-panel>
+      <span class="flex-container">
+        <img *ngIf="show.image" src="{{show.image}}" alt="test">
+        <span [innerHTML]="show.summary"></span>
+        </span>
+        <button style="margin-top: 5px" mat-flat-button color="warn" routerLink="/seasons/{{show.id}}">Details</button>
 
+  </mat-expansion-panel>
 </mat-accordion>

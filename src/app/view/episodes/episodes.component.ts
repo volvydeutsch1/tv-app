@@ -6,15 +6,14 @@ import {Episodes} from '../../models/Episodes';
 @Component({
   selector: 'app-episodes',
   templateUrl: './episodes.component.html',
-  styleUrls: ['./episodes.component.sass']
+  styleUrls: ['./episodes.component.scss']
 })
 
 export class EpisodesComponent implements OnInit {
   @Input() id: number;
-
+  displayedColumns: string[] = ['position', 'name', 'weight'];
   episodes: Episodes[];
   constructor(private dataService: DataService, private route: ActivatedRoute) {
-
   }
   ngOnInit() {
     this.dataService.getEpisodes(this.id).subscribe(

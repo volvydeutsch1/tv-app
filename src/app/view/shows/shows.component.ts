@@ -6,7 +6,7 @@ import {Show} from '../../models/Show';
 @Component({
   selector: 'app-shows',
   templateUrl: './shows.component.html',
-  styleUrls: ['./shows.component.sass']
+  styleUrls: ['./shows.component.scss']
 })
 export class ShowsComponent implements OnInit {
   search: string;
