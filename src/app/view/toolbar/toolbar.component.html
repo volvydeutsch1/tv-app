@@ -1,3 +1,12 @@
 <mat-toolbar color="warn">
   <span>TV App</span>
+  <span style="margin: 0 auto"></span>
+  <div class="search-container">
+    <form>
+      <mat-form-field class="search">
+        <input matInput placeholder="Favorite Tv Show" [(ngModel)]="search" name="search">
+      </mat-form-field>
+      <button mat-icon-button routerLink="/show/{{search}}"><mat-icon>search</mat-icon></button>
+    </form>
+  </div>
 </mat-toolbar>

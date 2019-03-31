@@ -1,7 +1,7 @@
-
+<app-toolbar></app-toolbar>
 <mat-accordion>
 <!--displaying all the shows with the details-->
-  <mat-expansion-panel *ngFor="let show of shows" style="background-color: red">
+  <mat-expansion-panel *ngFor="let show of shows">
     <mat-expansion-panel-header>
       <mat-panel-title>
         {{show.name}}
@@ -17,8 +17,11 @@
         <img *ngIf="show.image" src="{{show.image}}" alt="test">
         <span [innerHTML]="show.summary"></span>
         </span>
+    <span *ngIf="show.prevEp">previous episode: {{show.prevEp.name}}</span>
+    <span *ngIf="show.nextEp">next episode: {{show.nextEp.name}}</span>
 <!--button to get the seasons of the show-->
+    <mat-action-row>
         <button style="margin-top: 5px" mat-flat-button color="warn" routerLink="/seasons/{{show.id}}">Details</button>
-
+    </mat-action-row>
   </mat-expansion-panel>
 </mat-accordion>

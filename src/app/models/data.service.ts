@@ -7,17 +7,20 @@ import {Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class DataService {
-
+  baseURL = 'http://api.tvmaze.com/';
   constructor(private http: HttpClient) { }
 
   getShows(query): Observable<any[]> {
-    return this.http.get<any[]>('http://api.tvmaze.com/search/shows?q=' + query);
+    return this.http.get<any[]>(this.baseURL + 'search/shows?q=' + query);
   }
   getSeasons(id): Observable<any[]> {
-    return this.http.get<any[]>('http://api.tvmaze.com/shows/' + id + '/seasons');
+    return this.http.get<any[]>(this.baseURL + 'shows/' + id + '/seasons');
   }
   getEpisodes(id: number): Observable<any[]> {
-    return this.http.get<any[]>('http://api.tvmaze.com/seasons/' + id + '/episodes');
+    return this.http.get<any[]>(this.baseURL + 'seasons/' + id + '/episodes');
+  }
+  getData(url): Observable<any> {
+    return this.http.get<any>(url);
   }
 }
 

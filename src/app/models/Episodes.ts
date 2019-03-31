@@ -5,7 +5,7 @@ export class Episodes {
   airdate: string;
   summary: string;
 
-  constructor(args?){
+  constructor(args?) {
     this.id = args.id;
     this.name = args.name;
     this.number = args.number;
