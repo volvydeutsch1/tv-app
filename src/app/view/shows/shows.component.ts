@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataService } from '../../data.service';
-import {Show} from '../../models/Show';
+import { Show } from '../../models/Show';
 
 @Component({
   selector: 'app-shows',
@@ -13,7 +13,9 @@ export class ShowsComponent implements OnInit {
   shows: Show[];
 
   constructor(private route: ActivatedRoute, private dataService: DataService) {
+    // getting the show name by a snapshot of the route
     this.search = this.route.snapshot.paramMap.get('search');
+    // getting all the shows with api call in the dataService and pushing it in to the array
     this.dataService.getShows(this.search).subscribe(
       res => {
         this.shows = [];

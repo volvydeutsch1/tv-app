@@ -1,8 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {DataService} from '../../data.service';
 import {ActivatedRoute} from '@angular/router';
 import {Seasons} from '../../models/Seasons';
-import {Show} from '../../models/Show';
 
 @Component({
   selector: 'app-seasons',
@@ -13,10 +12,10 @@ import {Show} from '../../models/Show';
 export class SeasonsComponent implements OnInit {
   id: string;
   seasons: Seasons[];
-  // show: Show;
   constructor(private dataService: DataService, private route: ActivatedRoute ) {
+    // getting the seasons with a snapshot of the route
     this.id = this.route.snapshot.paramMap.get('id');
-    // this.dataService.getShows(this.id);
+    // getting the seasons from the datService with an api call using the id and pushing it in a array
     this.dataService.getSeasons(this.id).subscribe(
       res => {
         this.seasons = [];

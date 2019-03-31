@@ -1,5 +1,6 @@
 
 <mat-accordion>
+<!--displaying all the shows with the details-->
   <mat-expansion-panel *ngFor="let show of shows" style="background-color: red">
     <mat-expansion-panel-header>
       <mat-panel-title>
@@ -16,6 +17,7 @@
         <img *ngIf="show.image" src="{{show.image}}" alt="test">
         <span [innerHTML]="show.summary"></span>
         </span>
+<!--button to get the seasons of the show-->
         <button style="margin-top: 5px" mat-flat-button color="warn" routerLink="/seasons/{{show.id}}">Details</button>
 
   </mat-expansion-panel>

@@ -1,12 +1,15 @@
 
 <mat-accordion>
+<!--  displaying all the seasons with the details-->
   <mat-expansion-panel *ngFor="let season of seasons" style="background-color: red">
     <mat-expansion-panel-header>
       <mat-panel-title style="color: #fafafa">
         season: {{season.number}}
       </mat-panel-title>
     </mat-expansion-panel-header>
+<!--    using ng-template so it should lowed only after getting the season id -->
     <ng-template matExpansionPanelContent>
+<!--      getting the id from the seasons to call the episodes -->
       <app-episodes [id]="season.id"></app-episodes>
     </ng-template>
   </mat-expansion-panel>

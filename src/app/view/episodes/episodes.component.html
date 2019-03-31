@@ -1,20 +1,4 @@
-<!--<mat-accordion>-->
-<!--  <mat-expansion-panel *ngFor="let episode of episodes" hideToggle>-->
-
-<!--    <mat-expansion-panel-header>-->
-<!--      <mat-panel-title>-->
-<!--        {{episode.number}}-->
-<!--      </mat-panel-title>-->
-<!--      <mat-panel-title>-->
-<!--        {{episode.name}}-->
-<!--      </mat-panel-title>-->
-<!--      <mat-panel-title>-->
-<!--        {{episode.airdate}}-->
-<!--      </mat-panel-title>-->
-<!--    </mat-expansion-panel-header>-->
-<!--  </mat-expansion-panel>-->
-<!--</mat-accordion>-->
-
+<!--displaying the episodes with the details-->
 <table mat-table [dataSource]="episodes" class="mat-elevation-z8">
   <ng-container matColumnDef="position">
     <th mat-header-cell *matHeaderCellDef> No. </th>

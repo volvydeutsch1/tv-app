@@ -1,11 +1,11 @@
 <app-toolbar></app-toolbar>
+<!--search box has a tow way binding so the router link to work-->
 <div class="search-container">
   <form>
     <mat-form-field class="search">
       <input matInput placeholder="Favorite Tv Show" [(ngModel)]="search" name="search">
     </mat-form-field>
       <button class="button" mat-fab color="warn" routerLink="/show/{{search}}"><mat-icon>search</mat-icon></button>
-
   </form>
 </div>
 

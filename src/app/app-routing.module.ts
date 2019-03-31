@@ -5,6 +5,7 @@ import { SearchboxComponent } from './view/searchbox/searchbox.component';
 import { SeasonsComponent } from './view/seasons/seasons.component';
 
 const routes: Routes = [
+  // routing to the page you specified using the router link
   { path: '', component: SearchboxComponent},
   { path: 'show/:search', component: ShowsComponent},
   { path: 'seasons/:id', component: SeasonsComponent}
