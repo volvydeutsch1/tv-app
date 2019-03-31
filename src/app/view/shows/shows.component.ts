@@ -47,7 +47,7 @@ export class ShowsComponent implements OnInit {
           // get that episode
           this.dataService.getData(show.nextEpUrl).subscribe(result => {
             const temp = new Episodes(result);
-            show.setprevEp(temp);
+            show.setnextEp(temp);
           });
         }
       }

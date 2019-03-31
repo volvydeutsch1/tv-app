@@ -17,7 +17,7 @@
         <img *ngIf="show.image" src="{{show.image}}" alt="test">
         <span [innerHTML]="show.summary"></span>
         </span>
-    <span *ngIf="show.prevEp">previous episode: {{show.prevEp.name}}</span>
+    <span *ngIf="show.prevEp">previous episode: {{show.prevEp.name}}</span><br>
     <span *ngIf="show.nextEp">next episode: {{show.nextEp.name}}</span>
 <!--button to get the seasons of the show-->
     <mat-action-row>
