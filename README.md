@@ -1,5 +1,8 @@
 # TvApp
 
+This is a TV APP to search for your favorite tv shows and displays all the seasons and episodes from the show
+
+Thanks to TVMaze i was abel to creat such a powerful and beautiful TvApp 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.4.
 
 ## Development server

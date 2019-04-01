@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataService } from '../../models/data.service';
 import { Show } from '../../models/Show';
-import {Episodes} from '../../models/Episodes';
+import { Episodes } from '../../models/Episodes';
 
 @Component({
   selector: 'app-shows',
@@ -13,9 +13,7 @@ export class ShowsComponent implements OnInit {
   search: string;
   shows: Show[];
   constructor(private route: ActivatedRoute, private dataService: DataService) {
-    // getting the show name by a snapshot of the route
-   // this.search = this.route.snapshot.paramMap.get('search');
-
+    // getting the show name from the route
     this.route.paramMap.subscribe((params) => {
       this.search = params.get('search');
       // getting all the shows with api call in the dataService and pushing it in to the array
@@ -25,6 +23,7 @@ export class ShowsComponent implements OnInit {
           res.map((item) => {
             this.shows.push(new Show(item.show));
           });
+          // getting the privies and next episodes
           this.getRelatedEpisodes();
         }
       );
@@ -36,17 +35,21 @@ export class ShowsComponent implements OnInit {
     this.shows.map(
       show => {
         if (show.prevEpUrl) {
-          // get that episode
+          // call the api to get the data from the dataService
           this.dataService.getData(show.prevEpUrl).subscribe(result => {
+            // getting only the ones i need by passing it to the episodes constructor
             const temp = new Episodes(result);
+            // passing the result to setprevEp
             show.setprevEp(temp);
           }
         );
         }
         if (show.nextEpUrl) {
-          // get that episode
+          // call the api to get the data from the dataService
           this.dataService.getData(show.nextEpUrl).subscribe(result => {
+            // getting only the ones i need by passing it to the episodes constructor
             const temp = new Episodes(result);
+            // passing the result to setprevEp
             show.setnextEp(temp);
           });
         }

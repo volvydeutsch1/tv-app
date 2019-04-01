@@ -4,6 +4,7 @@
   <div class="search-container">
     <form>
       <mat-form-field class="search">
+<!--        using two way binding for the router link-->
         <input matInput placeholder="Favorite Tv Show" [(ngModel)]="search" name="search">
       </mat-form-field>
       <button mat-icon-button routerLink="/show/{{search}}"><mat-icon>search</mat-icon></button>
