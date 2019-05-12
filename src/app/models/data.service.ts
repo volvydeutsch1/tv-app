@@ -7,7 +7,7 @@ import {Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class DataService {
-  baseURL = 'http://api.tvmaze.com/';
+  baseURL = 'https://api.tvmaze.com/';
   constructor(private http: HttpClient) { }
 
   getShows(query): Observable<any[]> {
